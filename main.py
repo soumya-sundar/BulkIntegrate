@@ -1,3 +1,6 @@
+# Cloud storage library reference - https://cloud.google.com/appengine/docs/python/googlecloudstorageclient/download
+#Program reference - https://cloud.google.com/appengine/docs/python/googlecloudstorageclient/getstarted
+
 import logging
 import os
 import csv, codecs, cStringIO
@@ -19,7 +22,8 @@ class MainPage(webapp2.RequestHandler):
 		filename1 = bucket + '/G_postcodes_2.csv'
 		self.response.write('\n\nPostcodes\n\n')
 		self.AccessPostcodes(filename1)
-
+     
+	#Function to tranform GCS file contents into GP entities. 
 	def AccessGP(self,filename1):
 		try:
 			gp_list = []
@@ -52,6 +56,7 @@ class MainPage(webapp2.RequestHandler):
 			self.response.write('\n\nThere was an error running the demo! '
 								'Please check the logs for more details.\n')
 
+	#Function to tranform GCS file contents into outcode entities.							
 	def AccessOutcodes(self,filename2):
 		try:
 			outcode_list = []
@@ -79,7 +84,8 @@ class MainPage(webapp2.RequestHandler):
 			logging.exception(e)
 			self.response.write('\n\nThere was an error running the demo! '
 								'Please check the logs for more details.\n')
-								
+
+	#Function to tranform GCS file contents into postcode entities.
 	def AccessPostcodes(self, filename3):
 		try:
 			postcode_list =  []
@@ -108,7 +114,8 @@ class MainPage(webapp2.RequestHandler):
 			logging.exception(e)
 			self.response.write('\n\nThere was an error running the demo! '
 								'Please check the logs for more details.\n')
-								
+
+	#Function to tranform GCS file contents into train station entities.
 	def AccessTrainStation(self,filename4):
 		try:
 			train_list = []
@@ -135,7 +142,8 @@ class MainPage(webapp2.RequestHandler):
 			logging.exception(e)
 			self.response.write('\n\nThere was an error running the demo! '
 								'Please check the logs for more details.\n')
-								
+	
+    #Function to tranform GCS file contents into supermarket entities.	
 	def AccessSupermarket(self,filename5):
 		try:
 			Supermarket_list = []
@@ -168,6 +176,7 @@ class MainPage(webapp2.RequestHandler):
 			self.response.write('\n\nThere was an error running the demo! '
 								'Please check the logs for more details.\n')
 
+	#Function to tranform GCS file contents into school entities.
 	def AccessSchool(self,filename6):
 		try:
 			School_list = []
